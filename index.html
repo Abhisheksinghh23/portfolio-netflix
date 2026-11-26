@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhishek Kumar | Developer Portfolio</title>
+<meta name="description" content="Abhishek Kumar, software developer in Bangalore. Browse 22 projects with live demos and source: full-stack, AI and browser apps.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#141414;color:#fff}
+a{color:#fff}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;padding:14px 4vw;background:linear-gradient(to bottom,rgba(0,0,0,.85),rgba(0,0,0,0));transition:background .3s}
+.topbar.scrolled{background:rgba(10,10,10,.95)}
+.logo{color:#E50914;font-weight:900;font-size:22px;letter-spacing:2px;text-decoration:none;margin-right:34px}
+.nav{display:flex;gap:20px;flex:1}
+.nav a{color:#e5e5e5;text-decoration:none;font-size:14px}
+.nav a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:1px solid #555;color:#fff;font-size:13px;padding:6px 12px;border-radius:4px;cursor:pointer}
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;padding:0 4vw 9vh;background:linear-gradient(115deg,#22092e 0%,#3b0a2e 35%,#141414 78%)}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 78% 28%,rgba(229,9,20,.28),transparent 55%);pointer-events:none}
+.hero-art{position:absolute;right:6vw;top:20vh;width:34vw;max-width:460px;aspect-ratio:16/10;border-radius:8px;background:linear-gradient(135deg,#1f4037,#3b0a2e);box-shadow:0 30px 80px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:9vw;color:rgba(255,255,255,.06);letter-spacing:4px;overflow:hidden}
+.hero-content{position:relative;z-index:2;max-width:640px}
+.kicker{color:#E50914;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:900;letter-spacing:-1px;line-height:1.02;margin-bottom:16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.badge{font-size:11px;font-weight:700;padding:4px 10px;border-radius:3px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28)}
+.badge.live{background:#E50914;border-color:#E50914}
+.hero p{color:#d2d2d2;font-size:16px;line-height:1.55;margin-bottom:24px}
+.btn{display:inline-block;padding:11px 26px;border-radius:4px;font-size:15px;font-weight:700;text-decoration:none;margin:0 10px 10px 0;border:0;cursor:pointer}
+.btn-play{background:#fff;color:#000}
+.btn-info{background:rgba(109,109,110,.6);color:#fff}
+.btn-play:hover{background:#ccc}
+.btn-info:hover{background:rgba(109,109,110,.8)}
+.rows{padding:4px 0 30px}
+.row-block{margin:8px 0 26px}
+.row-title{font-size:19px;font-weight:700;margin:0 4vw 10px;color:#e5e5e5}
+.strip{display:flex;gap:12px;overflow-x:auto;padding:6px 4vw 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.strip::-webkit-scrollbar{height:6px}
+.strip::-webkit-scrollbar-thumb{background:#444;border-radius:3px}
+.poster{position:relative;flex:0 0 240px;height:135px;border-radius:6px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;scroll-snap-align:start;border:0;text-align:left;color:#fff;transition:transform .18s}
+.poster:hover,.poster:focus-visible{transform:scale(1.05);outline:2px solid #fff;z-index:2}
+.poster .t{font-weight:800;font-size:17px;text-shadow:0 2px 6px rgba(0,0,0,.65)}
+.poster .s{font-size:11px;color:rgba(255,255,255,.88);margin-top:3px;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.tag{position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;padding:3px 7px;border-radius:3px;background:#E50914}
+.tag.code{background:#0f79af}
+.g1{background:linear-gradient(135deg,#e65c00,#f9d423)}
+.g2{background:linear-gradient(135deg,#11998e,#38ef7d)}
+.g3{background:linear-gradient(135deg,#fc4a1a,#f7b733)}
+.g4{background:linear-gradient(135deg,#8e2de2,#4a00e0)}
+.g5{background:linear-gradient(135deg,#396afc,#2948ff)}
+.g6{background:linear-gradient(135deg,#eb3349,#f45c43)}
+.g7{background:linear-gradient(135deg,#1f4037,#99f2c8)}
+.g8{background:linear-gradient(135deg,#654ea3,#eaafc8)}
+.g9{background:linear-gradient(135deg,#0f2027,#2c5364)}
+.g10{background:linear-gradient(135deg,#642b73,#c6426e)}
+.g11{background:linear-gradient(135deg,#134e5e,#71b280)}
+.g12{background:linear-gradient(135deg,#41295a,#2f0743)}
+section.block{padding:44px 4vw;max-width:1100px;margin:0 auto}
+section.block h2{font-size:26px;font-weight:800;margin-bottom:20px;color:#fff}
+.xp{border-left:3px solid #E50914;padding:4px 0 4px 20px;margin-bottom:28px}
+.xp h3{font-size:18px;margin-bottom:2px}
+.xp .when{color:#999;font-size:13px;margin-bottom:10px}
+.xp ul{margin-left:18px;color:#d2d2d2;font-size:14px;line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{background:#232323;border:1px solid #3a3a3a;border-radius:14px;padding:6px 13px;font-size:13px;color:#e5e5e5}
+.sk-label{color:#999;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:18px 0 8px}
+.edu{margin-bottom:14px;color:#d2d2d2;font-size:15px;line-height:1.6}
+.edu b{color:#fff}
+.achv{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.achv span{background:rgba(229,9,20,.12);border:1px solid rgba(229,9,20,.5);color:#ffb3b8;padding:7px 13px;border-radius:14px;font-size:13px}
+.contact-box{background:#1c1c1c;border:1px solid #333;border-radius:8px;padding:28px;text-align:center}
+.contact-box p{color:#d2d2d2;margin-bottom:18px}
+footer{padding:26px 4vw 40px;color:#777;font-size:13px;text-align:center}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:90;display:none;align-items:center;justify-content:center;padding:18px}
+.modal-bg.open{display:flex}
+.modal{background:#181818;border-radius:10px;max-width:620px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 30px 90px rgba(0,0,0,.8)}
+.modal .mhero{height:170px;border-radius:10px 10px 0 0;display:flex;align-items:flex-end;padding:18px 24px}
+.modal .mhero h3{font-size:28px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.modal .mbody{padding:20px 24px 28px}
+.modal .close{position:absolute;top:12px;right:12px;background:rgba(20,20,20,.8);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;z-index:2}
+.modal p{color:#d2d2d2;font-size:14.5px;line-height:1.65;margin:12px 0}
+.modal .note{color:#a9a9a9;font-size:12.5px;border-left:3px solid #E50914;padding-left:12px;margin:12px 0}
+.modal .mlink{display:inline-block;margin:8px 10px 0 0}
+@media (max-width:760px){
+  .hero{min-height:78vh;padding-bottom:7vh}
+  .hero-art{display:none}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.97);flex-direction:column;padding:12px 4vw 18px;gap:14px}
+  .nav.open{display:flex}
+  .menu-btn{display:block;margin-left:auto}
+  .poster{flex:0 0 200px;height:118px}
+  section.block h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <a class="logo" href="#top">ABHISHEKFLIX</a>
+  <nav class="nav" id="nav">
+    <a href="#projects">Projects</a><a href="#more">More</a><a href="#games">Games</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" type="button">Menu</button>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-art">DC</div>
+  <div class="hero-content">
+    <div class="kicker">Featured build &middot; Final-year group project</div>
+    <h1>DevConnect</h1>
+    <div class="badges"><span class="badge live">LIVE DEMO</span><span class="badge">Kotlin &middot; Ktor &middot; MongoDB</span><span class="badge">22 projects inside</span></div>
+    <p>Abhishek Kumar, software developer in Bangalore. A platform where developers and clients connect: posts, search, profiles, chat and a contact inbox. Press play to try the live demo, or keep scrolling for the full catalogue.</p>
+    <a class="btn btn-play" href="https://devconnect-app-v2kx.onrender.com/" target="_blank" rel="noopener">&#9654; Live Demo</a>
+    <button class="btn btn-info" type="button" data-open="devconnect">&#9432; More Info</button>
+  </div>
+</section>
+
+<main class="rows" id="projects">
+  <div class="row-block"><div class="row-title">Trending: flagship projects</div><div class="strip" id="strip-main"></div></div>
+  <div class="row-block" id="more"><div class="row-title">More builds</div><div class="strip" id="strip-more"></div></div>
+  <div class="row-block" id="games"><div class="row-title">Browser games &middot; pretend play credits only</div><div class="strip" id="strip-games"></div></div>
+</main>
+
+<section class="block" id="experience">
+  <h2>Experience</h2>
+  <div class="xp"><h3>Python &amp; Machine Learning Intern &middot; Contriver, Bangalore</h3><div class="when">Feb 2026 &ndash; May 2026</div>
+  <ul><li>Built and maintained backend REST APIs and microservices in Python for ML and Generative AI features.</li><li>Built and automated ML/data pipelines.</li><li>Debugged API integration issues across preprocessing, model inference and application logic.</li><li>Worked with Git branching, pull requests, code reviews and GitHub Actions CI/CD.</li></ul></div>
+  <div class="xp"><h3>Full Stack Developer Intern &middot; Gharpayy</h3><div class="when">May 2025 &ndash; Jul 2025</div>
+  <ul><li>Built Fastify (Node.js) backend services and React.js features for a CRM admin panel.</li><li>Implemented data views, role-based access control and CRUD across CRM modules.</li><li>Developed responsive, accessible UI components integrated with Fastify REST endpoints.</li></ul></div>
+</section>
+
+<section class="block" id="skills">
+  <h2>Skills</h2>
+  <div class="sk-label">Languages</div><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Kotlin</span></div>
+  <div class="sk-label">Backend &amp; APIs</div><div class="chips"><span class="chip">REST design</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Fastify</span><span class="chip">Flask</span><span class="chip">Ktor</span><span class="chip">JWT</span></div>
+  <div class="sk-label">Frontend</div><div class="chips"><span class="chip">React</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Tailwind CSS</span></div>
+  <div class="sk-label">Databases</div><div class="chips"><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span></div>
+  <div class="sk-label">Practices &amp; tools</div><div class="chips"><span class="chip">Git</span><span class="chip">GitHub Actions</span><span class="chip">Agile/Scrum</span><span class="chip">Unit testing</span><span class="chip">Code review</span><span class="chip">Power BI</span></div>
+  <div class="sk-label">Also</div><div class="chips"><span class="chip">AI tools</span><span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">Docker (basic)</span><span class="chip">AWS (basic)</span><span class="chip">GCP (basic)</span></div>
+</section>
+
+<section class="block" id="education">
+  <h2>Education &amp; achievements</h2>
+  <div class="edu"><b>B.E., Information Science &amp; Engineering</b><br>2022 &ndash; 2026 &middot; AMC Engineering College, Bangalore &middot; CGPA 8.2 / 10</div>
+  <div class="edu"><b>12th (PCMC)</b> &middot; 2022 &middot; Christ Junior College &middot; 83.33%</div>
+  <div class="edu"><b>10th</b> &middot; 2020 &middot; Royal Public School &middot; 93.76%</div>
+  <div class="achv"><span>Recommended by the Naval Selection Board (SSB), Visakhapatnam</span><span>NCC 'C' Certificate</span><span>Thal Sainik Camp: Vice Chief Commendation</span><span>100 Days of Code (Python)</span><span>Kotlin Development</span><span>DevOps Fundamentals</span><span>Power BI Data Analysis</span></div>
+</section>
+
+<section class="block" id="contact">
+  <div class="contact-box">
+    <h2>Let's talk</h2>
+    <p>I'm looking for a software developer role. Email is the fastest way to reach me.</p>
+    <a class="btn btn-play" href="mailto:abhiabhisingh8050@gmail.com">abhiabhisingh8050@gmail.com</a>
+    <a class="btn btn-info" href="https://www.linkedin.com/in/abhishek-kumar-3695bb335" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+    <a class="btn btn-info" href="https://github.com/Abhisheksinghh23" target="_blank" rel="noopener">GitHub &#8599;</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Abhishek Kumar &middot; Bangalore, India &middot; <a href="#top">Back to top &#8593;</a></footer>
+
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="close" id="modalClose" type="button" aria-label="Close">&#10005;</button>
+    <div class="mhero" id="mHero"><h3 id="mTitle"></h3></div>
+    <div class="mbody">
+      <div class="chips" id="mChips"></div>
+      <p id="mDesc"></p>
+      <div class="note" id="mNote" style="display:none"></div>
+      <div id="mLinks"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const P = [
+ {id:'devconnect',name:'DevConnect',sub:'Developer marketplace',grad:'g9',tag:'live',
+  desc:'A platform where developers and clients connect, share posts and message each other. Built as a group final-year project; the backend is in Kotlin/Ktor with separate routes, services, authentication and data layers, JWT-based role authorization, and REST APIs for listings, user workflows and search/filter. The live demo is my own cleaned-up, tested version with accounts, posts with images, search, categories, profiles, a public chat room and a private contact inbox.',
+  chips:['Kotlin','Ktor','JWT','MongoDB','REST APIs'],
+  live:'https://devconnect-app-v2kx.onrender.com/', code:null, codeLabel:'Source: not public',
+  note:'Demo limits: the chat is one public room, video calls may fail on some networks, payments are record-only, and the free host can take a minute to wake up.'},
+ {id:'sketchlab',name:'SketchLab',sub:'Browser physics sandbox',grad:'g1',tag:'live',
+  desc:'Draw balls, boxes, ramps and pendulums, tune gravity, friction and bounce, then run the experiment. Scrub, rewind and fork runs to compare motion and energy charts. Fixed 60 Hz simulation, undo/redo, touch layout, saved in your browser.',
+  chips:['React','TypeScript','Matter.js','23 unit tests','E2E tests'],
+  live:'https://abhisheksinghh23.github.io/sketchlab/', code:'https://github.com/Abhisheksinghh23/sketchlab'},
+ {id:'docmind',name:'DocMind',sub:'Browser document Q&A',grad:'g2',tag:'live',
+  desc:'Add text, Markdown or selectable-text PDFs and ask a question. It finds the closest passages and quotes them with file and page citations, and says so when nothing fits. Files never leave your browser. Extractive, not a generative chatbot.',
+  chips:['JavaScript','Transformers.js','pdf.js','BM25 + embeddings'],
+  live:'https://abhisheksinghh23.github.io/docmind/', code:'https://github.com/Abhisheksinghh23/docmind',
+  note:'First load downloads about 85 MB of model files.'},
+ {id:'tutorledger',name:'TutorLedger',sub:'Web app for tuition teachers',grad:'g3',tag:'live',
+  desc:'Fees, attendance, tests and receipts for solo teachers: students, batches, monthly fees, partial payments, discounts, receipts, WhatsApp reminder drafts, CSV import/export and backup. Each account\u2019s data is private. Receipts are permanent: mistakes are cancelled and reissued, never edited.',
+  chips:['React','Firebase Auth','Firebase','Free tier'],
+  live:'https://tutorledger-8eac4.web.app', code:null, codeLabel:'Source: private repository'},
+ {id:'accessiplan',name:'AccessiPlan',sub:'AI accessibility travel planner',grad:'g5',tag:'code',
+  desc:'Full-stack app that generates personalised, accessibility-aware travel plans with the OpenAI API, including an AI chatbot. React frontend, Python/Flask REST API, and MongoDB schemas for profiles, preferences and itineraries. Includes a Postman collection and Docker Compose setup.',
+  chips:['React','Flask','MongoDB','OpenAI API','Docker'],
+  live:null, liveLabel:'Live demo: not deployed', code:'https://github.com/Abhisheksinghh23/accessibility-needs-generative-planner'},
+ {id:'apiflux',name:'APIFlux',sub:'API testing platform',grad:'g6',tag:'code',
+  desc:'A Postman-style API client. Send GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS requests, with query params, headers and bodies, Bearer, Basic and API-key auth, saved collections, history, environment variables and a collapsible JSON viewer. A server-side proxy solves CORS.',
+  chips:['React','Node.js','Express','MongoDB'],
+  live:null, liveLabel:'Live demo: not deployed', code:'https://github.com/Abhisheksinghh23/apiflux'},
+ {id:'mudra',name:'Mudra Mirror',sub:'Webcam gesture game',grad:'g4',tag:'live',
+  desc:'Show a Bharatanatyam hand gesture (mudra) to your camera and the app names it. Ten single-hand gestures, a mirror-game mode and a try-a-photo option. All processing happens on your device; no video is uploaded.',
+  chips:['JavaScript','Hand-landmark model','On-device'],
+  live:'https://abhisheksinghh23.github.io/mudra-mirror/', code:'https://github.com/Abhisheksinghh23/mudra-mirror',
+  note:'Early version: recognition accuracy is not yet validated on many real hands.'},
+ {id:'mission',name:'Mission Control',sub:'Navy-prep and career app',grad:'g7',tag:'code',group:'more',
+  desc:'React app with an SSB officer-selection simulator (PPDT, TAT, WAT, SRT, OIR drills, GTO and interview practice, PIQ form, progress dashboard) and career tools: resume builder, job matcher, mock interview and an application tracker.',
+  chips:['React','TypeScript','Vite','Tailwind','Dexie'],
+  live:null, liveLabel:'Live demo: none linked', code:'https://github.com/Abhisheksinghh23/missionssb'},
+ {id:'social',name:'SocialConnect',sub:'Full-stack social app',grad:'g8',tag:'code',group:'more',
+  desc:'Social media app with registration and login, profiles with avatar upload, posts with image upload, likes, comments, follows and a feed. Next.js route handlers backed by Supabase (Postgres, Auth, Storage).',
+  chips:['Next.js','TypeScript','Tailwind','Supabase'],
+  live:null, liveLabel:'Live demo: not deployed', code:'https://github.com/Abhisheksinghh23/social-connect'},
+ {id:'nimitai',name:'Meeting Transcript Signal Analyzer',sub:'Internship assignment (NimitAI)',grad:'g10',tag:'live',group:'more',
+  desc:'Paste a sales-call transcript and the app returns buying signals, objections and pricing concerns with exact quotes and a coaching tip for each. React frontend, Express backend, OpenAI GPT-4o-mini, with a demo mode when no key is set.',
+  chips:['React','Vite','Node.js','Express','OpenAI API'],
+  live:'https://nimitai.vercel.app', code:'https://github.com/Abhisheksinghh23/nimitai'},
+ {id:'smartmatch',name:'Smart Match Allocation System',sub:'Scheduling tool',grad:'g11',tag:'code',group:'more',
+  desc:'FastAPI and SQLite web app that assigns people to matches by rule: per-format limits, Test-match recovery days, next-day priority, admin overrides and transfers, close-day and an audit log. Includes a pytest suite.',
+  chips:['Python','FastAPI','SQLite','pytest'],
+  live:null, liveLabel:'Live demo: not available', code:'https://github.com/Abhisheksinghh23/schedule_generator'},
+ {id:'voice',name:'Voice Assistant',sub:'Android app',grad:'g12',tag:'code',group:'more',
+  desc:'Siri-style voice assistant for Android in Java: speech recognition and text-to-speech, spoken answers for time and date, opening apps, calls, search, YouTube and jokes, with an optional OpenAI fallback for other requests.',
+  chips:['Java','Android','Speech APIs'],
+  live:null, liveLabel:'Mobile app: no web demo', code:'https://github.com/Abhisheksinghh23/VoiceAssistant'},
+];
+const GAMES = [
+ {id:'tensign',name:'Ten-Sign Duel',sub:'Chance game · play credits',grad:'g1',tag:'live',group:'games',desc:'Pick one of ten symbols in a circle; each symbol beats the next three clockwise.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/playcredit-ten-sign-duel/',code:'https://github.com/Abhisheksinghh23/playcredit-ten-sign-duel'},
+ {id:'harbor',name:'Harbor Strike',sub:'Chance game · play credits',grad:'g5',tag:'live',group:'games',desc:'Hide-and-strike on a ten-cell circular harbor: a ship covers three adjacent cells, pick one to fire at.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/playcredit-harbor-strike/',code:'https://github.com/Abhisheksinghh23/playcredit-harbor-strike'},
+ {id:'numbercard',name:'Number Card',sub:'Chance game · play credits',grad:'g6',tag:'live',group:'games',desc:'Build a card of three different numbers from 1 to 10, then one number is drawn; match it to win.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/playcredit-number-card/',code:'https://github.com/Abhisheksinghh23/playcredit-number-card'},
+ {id:'margin',name:'Margin Duel',sub:'Chance game · play credits',grad:'g3',tag:'live',group:'games',desc:'You and the computer each draw a card from 1 to 20; yours must be at least five higher to win.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/playcredit-margin-duel/',code:'https://github.com/Abhisheksinghh23/playcredit-margin-duel'},
+ {id:'cavedig',name:'Cave Dig',sub:'Chance game · play credits',grad:'g2',tag:'live',group:'games',desc:'Pick one tile in a 20-tile cave hiding six gems; find a gem to win.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/playcredit-cave-dig/',code:'https://github.com/Abhisheksinghh23/playcredit-cave-dig'},
+ {id:'neonrail',name:'Neon Rail Runner',sub:'Skill game',grad:'g4',tag:'live',group:'games',desc:'Neon-city runner: lane switching, jumps and slides.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/neon-arcade/neon-rail-runner/',code:'https://github.com/Abhisheksinghh23/neon-arcade'},
+ {id:'runeforge',name:'Rune Forge Duel',sub:'Skill game',grad:'g8',tag:'live',group:'games',desc:'Tactical 5\u00d75 rune board game against three AI levels.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/neon-arcade/rune-forge-duel/',code:'https://github.com/Abhisheksinghh23/neon-arcade'},
+ {id:'lantern',name:'Spirit Lantern Vault',sub:'Chance game · play credits',grad:'g10',tag:'live',group:'games',desc:'Misty temple of glowing lanterns; pick one to reveal it.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/neon-arcade/spirit-lantern-vault/',code:'https://github.com/Abhisheksinghh23/neon-arcade'},
+ {id:'orbit',name:'Orbit Beacon',sub:'Chance game · play credits',grad:'g11',tag:'live',group:'games',desc:'Animated solar system; send a probe to a planet.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/neon-arcade/orbit-beacon/',code:'https://github.com/Abhisheksinghh23/neon-arcade'},
+ {id:'heist',name:'Clockwork Heist',sub:'Chance game · play credits',grad:'g12',tag:'live',group:'games',desc:'Brass-gear vault with a lever reveal.',chips:['Static site'],live:'https://abhisheksinghh23.github.io/neon-arcade/clockwork-heist/',code:'https://github.com/Abhisheksinghh23/neon-arcade'},
+];
+const ALL = P.concat(GAMES);
+function poster(p){
+  const b=document.createElement('button');b.type='button';b.className='poster '+p.grad;b.dataset.open=p.id;
+  b.innerHTML='<span class="tag '+(p.tag==='live'?'':'code')+'">'+(p.tag==='live'?'LIVE':'CODE')+'</span><span class="t">'+p.name+'</span><span class="s">'+p.sub+'</span>';
+  return b;
+}
+P.filter(p=>!p.group).forEach(p=>document.getElementById('strip-main').appendChild(poster(p)));
+P.filter(p=>p.group==='more').forEach(p=>document.getElementById('strip-more').appendChild(poster(p)));
+GAMES.forEach(p=>document.getElementById('strip-games').appendChild(poster(p)));
+const bg=document.getElementById('modalBg');
+function openModal(p){
+  document.getElementById('mTitle').textContent=p.name;
+  const h=document.getElementById('mHero');h.className='mhero '+p.grad;
+  document.getElementById('mChips').innerHTML=p.chips.map(c=>'<span class="chip">'+c+'</span>').join('');
+  document.getElementById('mDesc').textContent=p.desc;
+  const n=document.getElementById('mNote');
+  if(p.note){n.style.display='block';n.textContent=p.note;}else{n.style.display='none';}
+  let links='';
+  if(p.live)links+='<a class="btn btn-play mlink" href="'+p.live+'" target="_blank" rel="noopener">&#9654; Live demo</a>';
+  else links+='<span class="chip mlink">'+p.liveLabel+'</span>';
+  if(p.code)links+='<a class="btn btn-info mlink" href="'+p.code+'" target="_blank" rel="noopener">GitHub &#8599;</a>';
+  else links+='<span class="chip mlink">'+p.codeLabel+'</span>';
+  document.getElementById('mLinks').innerHTML=links;
+  bg.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){bg.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('click',e=>{
+  const o=e.target.closest('[data-open]');
+  if(o){const p=ALL.find(x=>x.id===o.dataset.open);if(p)openModal(p);}
+});
+document.getElementById('modalClose').addEventListener('click',closeModal);
+bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+const nav=document.getElementById('nav');
+document.getElementById('menuBtn').addEventListener('click',()=>nav.classList.toggle('open'));
+nav.addEventListener('click',()=>nav.classList.remove('open'));
+window.addEventListener('scroll',()=>{document.getElementById('topbar').classList.toggle('scrolled',window.scrollY>40);});
+if(location.hash.indexOf('#p-')===0){const p=ALL.find(x=>x.id===location.hash.slice(3));if(p)openModal(p);}
+</script>
+</body>
+</html>
