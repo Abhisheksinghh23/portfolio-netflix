@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abhishek Kumar | Developer Portfolio</title>
-<meta name="description" content="Abhishek Kumar, software developer in Bangalore. Browse 25 projects with live demos and source: full-stack, AI and browser apps.">
+<meta name="description" content="Abhishek Kumar, software developer in Bangalore. Browse 27 projects with live demos and source: full-stack, AI and browser apps.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
 html{scroll-behavior:smooth}
@@ -108,7 +108,7 @@ footer{padding:26px 4vw 40px;color:#777;font-size:13px;text-align:center}
   <div class="hero-content">
     <div class="kicker">Featured build &middot; Final-year group project</div>
     <h1>DevConnect</h1>
-    <div class="badges"><span class="badge live">LIVE DEMO</span><span class="badge">Kotlin &middot; Ktor &middot; MongoDB</span><span class="badge">25 projects inside</span></div>
+    <div class="badges"><span class="badge live">LIVE DEMO</span><span class="badge">Kotlin &middot; Ktor &middot; MongoDB</span><span class="badge">27 projects inside</span></div>
     <p>Abhishek Kumar, software developer in Bangalore. A platform where developers and clients connect: posts, search, profiles, chat and a contact inbox. Press play to try the live demo, or keep scrolling for the full catalogue.</p>
     <a class="btn btn-play" href="https://devconnect-app-v2kx.onrender.com/" target="_blank" rel="noopener">&#9654; Live Demo</a>
     <button class="btn btn-info" type="button" data-open="devconnect">&#9432; More Info</button>
@@ -217,6 +217,14 @@ const P = [
   desc:'Fly a lunar lander and plan rover routes on real 3 m NASA LROC terrain near the Chandrayaan-3 landing site. Compare shortest, balanced and gentlest rover routes by slope. A script in the repo crops and georeferences the terrain data.',
   chips:["JavaScript", "Web Worker", "Dijkstra", "NASA LROC terrain"],
   live:'https://abhisheksinghh23.github.io/shiv-shakti-lab/', code:'https://github.com/Abhisheksinghh23/shiv-shakti-lab', note:'Educational demo, not mission software. The terrain is a pre-landing model with 3 m cells, so rocks are not resolved; 0.33% of cells were filled. Credit: NASA/GSFC/Arizona State University.'},
+ {id:'basalt',name:'Basalt',sub:'Database engine in Go',grad:'g3',tag:'code',
+  desc:'Embedded LSM-tree key-value database in Go with no dependencies. Write-ahead log, memtable, SSTables with a sparse index and bloom filters, compaction, atomic batches, optimistic transactions and a small TCP server. Checked with SIGKILL crash rounds, a torn-log test at every byte offset, crash cut-point snapshots, corruption tests and the race detector.',
+  chips:['Go', 'LSM tree', 'WAL', 'Bloom filter', 'Race detector'],
+  live:null, liveLabel:'Runs locally: no hosted demo', code:'https://github.com/Abhisheksinghh23/basalt', note:'Runs locally with go test and the included server; no hosted demo. Tested against process crashes, not power loss. Tested on Linux; the Windows build was only compiled. Transactions validate point reads only and scans are not transactional.'},
+ {id:'redisj',name:'redisj',sub:'Redis-compatible server in Java',grad:'g5',tag:'code',
+  desc:'Redis-protocol server in Java 17 with no dependencies. Single-threaded NIO event loop, RESP2 parser, about 45 commands over strings, lists, hashes and sets, key expiry, and an append-only file with crash recovery. Checked with 32 tests, a 440,000-command differential fuzz against Redis 6.2.14 with no mismatches, and a kill -9 durability test.',
+  chips:['Java 17', 'NIO', 'RESP2', 'Append-only file', 'Differential fuzzing'],
+  live:null, liveLabel:'Runs locally: no hosted demo', code:'https://github.com/Abhisheksinghh23/redisj', note:'Runs locally, loopback only; no hosted demo. A command subset, not a full Redis replacement: no auth, pub/sub, MULTI or replication. Tested against process crashes, not power loss. No performance claim.'},
  {id:'mission',name:'Mission Control',sub:'Navy-prep and career app',grad:'g7',tag:'code',group:'more',
   desc:'React app with an SSB officer-selection simulator (PPDT, TAT, WAT, SRT, OIR drills, GTO and interview practice, PIQ form, progress dashboard) and career tools: resume builder, job matcher, mock interview and an application tracker.',
   chips:['React','TypeScript','Vite','Tailwind','Dexie'],
