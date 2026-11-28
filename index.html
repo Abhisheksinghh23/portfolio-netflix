@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abhishek Kumar | Developer Portfolio</title>
-<meta name="description" content="Abhishek Kumar, software developer in Bangalore. Browse 27 projects with live demos and source: full-stack, AI and browser apps.">
+<meta name="description" content="Abhishek Kumar, software developer in Bangalore. Browse 28 projects with live demos and source: full-stack, AI and browser apps.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
 html{scroll-behavior:smooth}
@@ -108,7 +108,7 @@ footer{padding:26px 4vw 40px;color:#777;font-size:13px;text-align:center}
   <div class="hero-content">
     <div class="kicker">Featured build &middot; Final-year group project</div>
     <h1>DevConnect</h1>
-    <div class="badges"><span class="badge live">LIVE DEMO</span><span class="badge">Kotlin &middot; Ktor &middot; MongoDB</span><span class="badge">27 projects inside</span></div>
+    <div class="badges"><span class="badge live">LIVE DEMO</span><span class="badge">Kotlin &middot; Ktor &middot; MongoDB</span><span class="badge">28 projects inside</span></div>
     <p>Abhishek Kumar, software developer in Bangalore. A platform where developers and clients connect: posts, search, profiles, chat and a contact inbox. Press play to try the live demo, or keep scrolling for the full catalogue.</p>
     <a class="btn btn-play" href="https://devconnect-app-v2kx.onrender.com/" target="_blank" rel="noopener">&#9654; Live Demo</a>
     <button class="btn btn-info" type="button" data-open="devconnect">&#9432; More Info</button>
@@ -225,6 +225,10 @@ const P = [
   desc:'Redis-protocol server in Java 17 with no dependencies. Single-threaded NIO event loop, RESP2 parser, about 45 commands over strings, lists, hashes and sets, key expiry, and an append-only file with crash recovery. Checked with 32 tests, a 440,000-command differential fuzz against Redis 6.2.14 with no mismatches, and a kill -9 durability test.',
   chips:['Java 17', 'NIO', 'RESP2', 'Append-only file', 'Differential fuzzing'],
   live:'https://abhisheksinghh23.github.io/redisj/', code:'https://github.com/Abhisheksinghh23/redisj', note:'Browser demo runs the command engine only on CheerpJ, in memory, with no sockets or append-only file; the server runs locally, loopback only. A command subset, not a full Redis replacement: no auth, pub/sub, MULTI or replication. Tested against process crashes, not power loss. No performance claim.'},
+ {id:'patchpilot',name:'patchpilot',sub:'Repo-repair agent in Python',grad:'g6',tag:'code',
+  desc:'Bug-fixing agent with no dependencies. Reproduces a failing test suite, asks an LLM to locate and patch the bug, applies the unified diff with its own stdlib parser, and accepts the fix only if the full suite then passes (patches touching tests are rejected). Single-call and pipeline modes, round-level checkpointing, and a hardened Docker executor (non-root, network blocked, capabilities dropped). 40 unit tests; 15/15 on a self-authored seeded-bug suite with a free model; Docker-isolated repair verified on GitHub Actions.',
+  chips:["Python", "pytest", "Docker", "LLM agent", "Pyodide"],
+  live:'https://abhisheksinghh23.github.io/patchpilot/', code:'https://github.com/Abhisheksinghh23/patchpilot', note:'Browser demo repairs only the 15 bundled self-authored fixtures, inside a WebAssembly sandbox in the browser (Pyodide); nothing runs on a server and state resets on reload. The model is the Pollinations anonymous free tier (best effort, so a repair can take a minute). Docker isolation is verified only in the GitHub Actions spike, not the browser demo. Seeded-bug results are limited evidence, not a SWE-bench score.'},
  {id:'mission',name:'Mission Control',sub:'Navy-prep and career app',grad:'g7',tag:'code',group:'more',
   desc:'React app with an SSB officer-selection simulator (PPDT, TAT, WAT, SRT, OIR drills, GTO and interview practice, PIQ form, progress dashboard) and career tools: resume builder, job matcher, mock interview and an application tracker.',
   chips:['React','TypeScript','Vite','Tailwind','Dexie'],
